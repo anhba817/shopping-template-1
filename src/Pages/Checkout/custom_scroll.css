@@ -1,0 +1,14 @@
+.custom-scroll-bar {
+  width: 100%;
+  max-height: 300px;
+  overflow: scroll;
+  padding-right: 15px;
+  margin-bottom: 25px;
+}
+.custom-scroll-bar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-thumb {
+  background: #0000ff; 
+}

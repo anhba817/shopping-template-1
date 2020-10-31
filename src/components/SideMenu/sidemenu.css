@@ -1,0 +1,25 @@
+.overflow-scroll {
+  height: 100vh;
+  overflow: scroll;
+}
+.overflow-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+.overflow-scroll::-webkit-scrollbar-thumb {
+  background: #0000ff; 
+}
+
+.overflow-scroll-sticky {
+  padding-top: 80px;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.overflow-scroll-sticky::-webkit-scrollbar {
+  width: 3px;
+}
+
+.overflow-scroll-sticky::-webkit-scrollbar-thumb {
+  background: #0000ff; 
+}

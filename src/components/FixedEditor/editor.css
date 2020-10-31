@@ -1,0 +1,10 @@
+.subpage-content {
+  overflow-y: scroll;
+}
+.subpage-content::-webkit-scrollbar {
+  width: 3px;
+}
+
+.subpage-content::-webkit-scrollbar-thumb {
+  background: rgb(150, 255, 255); 
+}

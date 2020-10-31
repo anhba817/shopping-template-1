@@ -1,0 +1,10 @@
+.cart-items-container {
+  overflow-y: scroll;
+}
+.cart-items-container::-webkit-scrollbar {
+  width: 2px;
+}
+
+.cart-items-container::-webkit-scrollbar-thumb {
+  background: #5c5c6e; 
+}
