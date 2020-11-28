@@ -125,7 +125,9 @@ class Checkout extends Component {
 
   componentDidMount() {
     const cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    this.setState({ cartItems });
+    if (cartItems) {
+      this.setState({ cartItems });
+    }
   }
 
   handleDeleteAddressItem = (id) => {
@@ -183,10 +185,13 @@ class Checkout extends Component {
   render() {
     const { classes } = this.props;
     const { addresses, contacts, creditcards, cartItems } = this.state;
-    const total_cost = cartItems.reduce(
-      (a, item) => a + item.number * item.price,
-      0
-    );
+    let total_cost = 0;
+    if (cartItems) {
+      total_cost = cartItems.reduce(
+        (a, item) => a + item.number * item.price,
+        0
+      );
+    }
     const deliveryFee = 1.0;
     const discount = 0;
     return (

@@ -50,7 +50,9 @@ class Home extends Component {
 
   componentDidMount() {
     const cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    this.setState({ cartItems });
+    if (cartItems){
+      this.setState({ cartItems });
+    }
   }
 
   handleImageClick = (image) => {
@@ -143,10 +145,13 @@ class Home extends Component {
         item.categories.includes(categoryFilter)
       );
     }
-    const total_cost = cartItems.reduce(
-      (a, item) => a + item.number * item.price,
-      0
-    );
+    let total_cost = 0;
+    if (cartItems) {
+       total_cost = cartItems.reduce(
+        (a, item) => a + item.number * item.price,
+        0
+      );
+    }
     return (
       <>
         <AppBar />
