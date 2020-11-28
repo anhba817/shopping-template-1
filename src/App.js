@@ -10,6 +10,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import { ROUTES } from "./routes";
 import theme from "./theme";
 import FixedEditor from "./components/FixedEditor/index";
@@ -59,4 +60,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withAuthenticator(connect(mapStateToProps, mapDispatchToProps)(App));

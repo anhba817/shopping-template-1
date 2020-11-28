@@ -26,6 +26,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import SearchIcon from "@material-ui/icons/Search";
 import LanguagesMenu from "../LanguagesMenu/index";
 import InputBase from "@material-ui/core/InputBase";
+import { Auth } from "aws-amplify";
 import styles from "./styles";
 import { Typography } from "@material-ui/core";
 
@@ -85,6 +86,14 @@ class HideAppBar extends Component {
     this.setState({ open: false });
   };
 
+  async logout() {
+    try {
+      await Auth.signOut({ global: true });
+    } catch (error) {
+      console.log("error signing out: ", error);
+    }
+  }
+
   render() {
     const { classes, appearance } = this.props;
     const elevation = this.props.elevation ? this.props.elevation : 0;
@@ -121,7 +130,7 @@ class HideAppBar extends Component {
                   <img
                     alt="shop logo"
                     src={appearance.logo.image.data_url}
-                    style={{ maxWidth: 300, maxHeight: 120}}
+                    style={{ maxWidth: 300, maxHeight: 120 }}
                   />
                 )}
 
@@ -149,7 +158,9 @@ class HideAppBar extends Component {
                   </Button>
                 </Hidden>
                 <LanguagesMenu />
-                <Button className={classes.joinButton}>Join</Button>
+                <Button className={classes.joinButton} onClick={() => this.logout()}>
+                  SIGNOUT
+                </Button>
               </div>
             </Toolbar>
           </AppBar>

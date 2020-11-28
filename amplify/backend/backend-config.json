@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "shopping1fc113303": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
